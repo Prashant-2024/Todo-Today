@@ -4,10 +4,6 @@ import 'package:provider/provider.dart';
 import 'package:todo_today/Modals/task_data.dart';
 
 class AddTaskScreen extends StatelessWidget {
-  AddTaskScreen({required this.callbackAddTask});
-
-  final Function callbackAddTask;
-
   @override
   Widget build(BuildContext context) {
     late String newTaskTitle;
