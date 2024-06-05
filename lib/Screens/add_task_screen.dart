@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:todo_today/Modals/task_data.dart';
 
 class AddTaskScreen extends StatelessWidget {
   AddTaskScreen({required this.callbackAddTask});
@@ -53,7 +55,9 @@ class AddTaskScreen extends StatelessWidget {
                     WidgetStateProperty.all(Colors.lightBlueAccent),
               ),
               onPressed: () {
-                callbackAddTask(newTaskTitle);
+                Provider.of<TaskData>(context, listen: false)
+                    .addTask(newTaskTitle);
+                Navigator.pop(context);
               },
             ),
           ],
